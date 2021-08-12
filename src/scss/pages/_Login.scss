@@ -1,0 +1,138 @@
+.login {
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+
+  &__image {
+    flex: 60% 1;
+    background-image: url("../../images/background.webp");
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  &__body {
+    flex: 40%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-form{
+      max-width: 40rem;
+      width: 35rem;
+      text-align: center;
+
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin-bottom: 10rem;
+    animation: zoom-in-animation 300ms 30ms ease-in-out forwards;
+  }
+  
+  &__input-div {
+    position: relative;
+    border-bottom: 2px solid #a3a3a38e;
+    display: flex;
+    transform: scale(0.98);
+  }
+  
+  &__input-div:focus-within {
+    border-bottom: 2px solid #61acb3;
+    transform: scale(1);
+    transition: transform 150ms;
+
+    i{
+      color: #61acb3;
+    }
+  }
+  
+  &__input-div > i {
+    font-size: 1.5rem;
+    position: relative;
+    top: 3.2rem;
+  }
+  
+  &__input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem 1rem 0.5rem;
+    border: 0;
+    margin: 2rem 0 0;
+  }
+  
+  &__input:focus {
+    outline: none;
+  }
+  
+  &__input::placeholder {
+    color: #a3a3a3;
+  }
+  
+  &__button {
+    width: 100%;
+    background-color: #61acb3;
+    border: 1px solid #61acb3;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  &__button:hover,
+  &__button:active,
+  &__button:focus {
+    background-color: rgb(255, 255, 255);
+    color: #61acb3;
+  }
+  
+  &__forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+
+
+
+    &>.input-group{
+      width: fit-content;
+      align-items: center;
+
+      h5{
+        margin-bottom: 0;
+      }
+
+      span{
+        color: transparent;
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+
+
+  @include media-tablet {
+    &__image {
+      display: none;
+    }
+
+    &__body {
+      margin: 0;
+      background-image: url("../../images/background.webp");
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }  
+  }
+}
